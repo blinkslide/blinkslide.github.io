@@ -155,10 +155,21 @@
         }
 
         nav .logo {
-            font-family: 'Abril Fatface', cursive;
-            font-size: 1.5rem;
             color: var(--accent);
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+
+        nav .logo:hover {
+            transform: scale(1.1);
+        }
+
+        nav .logo svg {
+            width: 40px;
+            height: 40px;
+            fill: var(--accent);
         }
 
         nav ul {
@@ -457,7 +468,27 @@
 </head>
 <body>
     <nav>
-        <a href="#" class="logo">BL</a>
+        <a href="#" class="logo">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <!-- Trombone slide -->
+                <rect x="10" y="42" width="60" height="4" rx="1"/>
+                <rect x="10" y="54" width="60" height="4" rx="1"/>
+                
+                <!-- Slide brace -->
+                <rect x="58" y="40" width="3" height="20" rx="1"/>
+                
+                <!-- Bell section -->
+                <path d="M 70 45 Q 75 45, 80 42 Q 85 40, 88 35 Q 90 30, 90 25 Q 88 20, 85 18 Q 82 16, 78 16 Q 75 16, 72 18 L 70 20 Z" />
+                <path d="M 70 55 Q 75 55, 80 58 Q 85 60, 88 65 Q 90 70, 90 75 Q 88 80, 85 82 Q 82 84, 78 84 Q 75 84, 72 82 L 70 80 Z" />
+                
+                <!-- Bell opening -->
+                <ellipse cx="88" cy="50" rx="8" ry="25" opacity="0.3"/>
+                
+                <!-- Mouthpiece -->
+                <circle cx="12" cy="48" r="3"/>
+                <rect x="8" y="47" width="4" height="2"/>
+            </svg>
+        </a>
         <ul>
             <li><a href="#bio">About</a></li>
             <li><a href="#media">Media</a></li>
@@ -483,7 +514,7 @@
         <h2 class="section-title">About</h2>
         <div class="bio-content">
             <div class="bio-text">
-                <p>Ben Link is a dynamic trombonist, composer, educator, and graphic artist based in Chicago, Illinois. Ben honed his craft studying trombone performance at Indiana University under renowned professors David Baker and Dee Stewart, as well as at McNally Smith College of Music in St. Paul, MN with Peter Whitman and Scott Agster.</p>
+                <p>Ben Link is a versatile trombonist, composer, educator, and graphic artist based in Chicago, Illinois. Ben honed his craft studying trombone performance at Indiana University under renowned professors David Baker and Dee Stewart, as well as at McNally Smith College of Music in St. Paul, MN with Peter Whitman and Scott Agster.</p>
                 
                 <p>After college, Ben spent five years as a full-time member of the critically acclaimed touring band Davina and the Vagabonds, often traveling more than 250 days a year. During his tenure with the band, he had the honor of performing on the Jools Holland Show and at prestigious events like the Monterey Jazz Festival, among countless other venues across the country and abroad.</p>
                 
@@ -562,7 +593,7 @@
         <div class="contact-info">
             <p>Based in Chicago, Illinois</p>
             <p>Available for performances, collaborations, and private lessons</p>
-            <p><a href="mailto:blinkslide@gmail.com">blinkslide@gmail.com</a></p>
+            <p><a href="/cdn-cgi/l/email-protection#fb99979295908897929f9ebb9c969a9297d5989496"><span class="__cf_email__" data-cfemail="c1a3ada8afaab2ada8a5a481a6aca0a8adefa2aeac">[email&#160;protected]</span></a></p>
             <p><a href="https://instagram.com/blinkslide" target="_blank">@blinkslide</a> on Instagram</p>
         </div>
     </section>
@@ -571,7 +602,7 @@
         <p>&copy; 2026 Ben Link. All rights reserved.</p>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -595,14 +626,4 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.media-item, .audio-item').forEach(item => {
-            observer.observe(item);
-        });
-    </script>
-</body>
-</html>
+                    entry.target.style.animation = 'fadeInUp 0.
