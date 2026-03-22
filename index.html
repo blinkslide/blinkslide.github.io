@@ -290,6 +290,18 @@
             margin-top: 3rem;
         }
 
+        .media-item.featured {
+            grid-column: span 2;
+        }
+
+        .media-item.featured iframe {
+            height: 400px;
+        }
+
+        .media-item.featured .media-info h3 {
+            font-size: 1.6rem;
+        }
+
         .media-item {
             background: var(--secondary);
             border-radius: 8px;
@@ -411,6 +423,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .media-item.featured {
+                grid-column: span 1;
+            }
+
             section {
                 padding: 4rem 1.5rem;
             }
@@ -514,7 +530,7 @@
         <p class="section-intro">Explore performances spanning jazz, blues, experimental compositions, and more.</p>
         
         <div class="media-grid">
-            <div class="media-item">
+            <div class="media-item featured">
                 <iframe src="https://www.youtube.com/embed/bKBJYomz5_s" allowfullscreen></iframe>
                 <div class="media-info">
                     <h3>Ben Link Quintet - Gregarious Jeff</h3>
@@ -534,6 +550,7 @@
                 <h3>Tiny Tuesday Collage</h3>
                 <p>An experimental track created with MIDI and samples for Patrick Larkin's Tiny Tuesday series in Minneapolis.</p>
                 <iframe scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1405988033&color=%23c89b3c&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                <p style="margin-top: 1rem; font-size: 0.9rem;"><a href="https://soundcloud.com/benjaminalink/tiny-tuesday-collage" target="_blank" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent);">Listen on SoundCloud →</a></p>
             </div>
 
             <div class="media-item">
