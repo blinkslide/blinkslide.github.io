@@ -11,11 +11,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: Georgia, 'Times New Roman', serif; background: #0d0b09; color: #e8e0d4; line-height: 1.6; }
+  body { font-family: Georgia, 'Times New Roman', serif; background: #0d0b09; color: #e8e0d4; line-height: 1.6; zoom: 1.1; }
 
   .masthead {
     text-align: center; background: #0d0b09; padding: 40px 32px 36px;
-    border-bottom: 1.5px solid #5a4800;
+    border: 1.5px solid #5a4800;
     position: relative;
   }
   .masthead::after {
@@ -32,6 +32,7 @@
     font-size: 0.78em; font-style: italic; font-weight: normal;
     color: #8a7a4a; margin-top: 10px; letter-spacing: 0.5px;
   }
+
   /* Filter bar */
   #filter-bar {
     position: sticky; top: 0; z-index: 100;
@@ -40,18 +41,13 @@
     display: flex; align-items: center; justify-content: center; gap: 20px;
   }
   .filter-left { display: flex; flex-direction: column; gap: 7px; }
-  .filter-top-row {
-    display: flex; align-items: center; gap: 8px;
-  }
+  .filter-top-row { display: flex; align-items: center; gap: 8px; }
   .filter-label {
     font-family: 'Courier New', monospace; font-size: 0.68em;
     letter-spacing: 1.5px; text-transform: uppercase; color: #685848;
     white-space: nowrap; margin-right: 2px;
   }
-  .venue-word-bank {
-    display: flex; flex-wrap: wrap; gap: 5px;
-    max-width: 440px;
-  }
+  .venue-word-bank { display: flex; flex-wrap: wrap; gap: 5px; max-width: 440px; }
 
   .vf-btn {
     font-family: 'Courier New', monospace; font-size: 0.70em;
@@ -75,9 +71,7 @@
     border: 1.5px solid #382e24; border-radius: 3px;
     padding: 3px 6px; cursor: pointer;
     background: transparent; color: #685848;
-    white-space: nowrap; appearance: none;
-    -webkit-appearance: none;
-    outline: none;
+    white-space: nowrap; appearance: none; -webkit-appearance: none; outline: none;
   }
   .util-select:hover { border-color: #685848; color: #e8e0d4; }
   .util-select option { background: #181410; color: #e8e0d4; }
@@ -93,17 +87,18 @@
   .map-sq-btn:hover { border-color: #685848; color: #e8e0d4; }
   .map-sq-btn.active { background: #c4a000; border-color: #c4a000; color: #fff; }
 
-  #no-results {
-    display: none; text-align: center; padding: 60px 20px;
-    color: #685848; font-style: italic; font-size: 1.05em;
-  }
+  #no-results { display: none; text-align: center; padding: 60px 20px; color: #685848; font-style: italic; font-size: 1.05em; }
 
   .wrapper { max-width: 860px; margin: 0 auto; padding: 32px 20px 64px; }
-
 
   #venue-map { height: 380px; border-radius: 6px; border: 1px solid #221e19; margin-bottom: 32px; cursor: pointer; display: none; z-index: 1; }
 
   .day-block { margin-bottom: 36px; }
+
+  /* day-blocks and other sections outside the wrapper (body-level) */
+  body > .day-block, body > .past-toggle-row {
+    max-width: 860px; margin-left: auto; margin-right: auto; padding: 0 20px;
+  }
   .day-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 14px; padding-bottom: 6px; border-bottom: 2px solid #221e19; }
   .day-name { font-size: 1.4em; font-weight: bold; color: #e8e0d4; }
   .day-date { font-size: 1em; color: #988070; font-style: italic; }
@@ -135,7 +130,7 @@
   .past-day .venue-tag { opacity: 0.35; }
   .past-day .event-time, .past-day .event-price { color: #2a2218; }
 
-  .footer { text-align: center; font-size: 0.8em; color: #4a3e30; border-top: 1px solid #221e19; padding-top: 20px; margin-top: 40px; font-style: italic; }
+  .footer { text-align: center; font-size: 0.8em; color: #4a3e30; border-top: 1px solid #221e19; padding: 20px 20px 0; margin: 40px auto 0; font-style: italic; max-width: 860px; }
 
   .gcal-btn {
     display: inline-flex; align-items: center; gap: 4px;
@@ -148,7 +143,8 @@
   }
   .gcal-btn:hover { color: #c4a000; border-color: #8a7a4a; background: #181410; }
   .gcal-btn svg { flex-shrink: 0; }
-  .past-day .gcal-btn { opacity: 0.25; pointer-events: none; }
+  .past-day .gcal-btn { opacity: 0.2; pointer-events: none; }
+
   @media (max-width: 600px) {
     .event-price { margin-left: 0; }
     #filter-bar { padding: 6px 10px 8px; gap: 5px; }
@@ -159,13 +155,14 @@
     .filter-label { display: none; }
     .masthead .bar-jazz { font-size: 2.4em; }
   }
-  /* Leaflet permanent label overrides */
+
+  /* Leaflet dark map tooltip */
   .venue-map-label {
-    background: rgba(13,11,9,0.9) !important;
+    background: rgba(13,11,9,0.88) !important;
     border: 1px solid #382e24 !important;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.18) !important;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.5) !important;
     border-radius: 3px !important;
-    padding: 2px 6px !important;
+    padding: 2px 7px !important;
     white-space: nowrap;
   }
   .venue-map-label::before { display: none !important; }
@@ -512,7 +509,7 @@
     <div class="event-blurb">Late set — Friday.</div>
   </div>
 </div>
-<div class="past-toggle-row"><button id="past-toggle" class="past-toggle-btn"></button></div>
+</div><div class="past-toggle-row"><button id="past-toggle" class="past-toggle-btn">&#x25BC;&nbsp;3 past days (Mar 25&#x2013;27)</button></div>
   <div class="day-block" data-date="2026-03-28" data-dow="Saturday">
   <div class="day-header"><span class="day-name">Saturday</span><span class="day-date">March 28</span></div>
   <div class="event" data-venue="Andy's Jazz Club" data-dow="Saturday" data-free="false" data-catchall="false" style="border-left-color:#b45309">
@@ -3362,192 +3359,120 @@
   var pastWrapper = document.getElementById('past-wrapper');
   var pastToggleBtn = document.getElementById('past-toggle');
   var pastToggleTop = document.getElementById('past-toggle-top');
-
-  function getTodayStr() {
-    var d = new Date();
-    var yr = d.getFullYear();
-    var mo = String(d.getMonth() + 1).padStart(2, '0');
-    var dy = String(d.getDate()).padStart(2, '0');
-    return yr + '-' + mo + '-' + dy;
-  }
-
-  function classifyDays() {
-    var today = getTodayStr();
-    var pastBlocks = [];
-    var futureBlocks = [];
-    // Collect ALL day-blocks from anywhere in the document
-    document.querySelectorAll('.day-block').forEach(function(block) {
-      var date = block.dataset.date;
-      if (date && date < today) {
-        block.classList.add('past-day');
-        pastBlocks.push(block);
-      } else {
-        block.classList.remove('past-day');
-        futureBlocks.push(block);
-      }
-    });
-
-    // Move past blocks into past-wrapper (after the top toggle row), in date order
-    var topToggleRow = pastWrapper.querySelector('.past-toggle-row');
-    pastBlocks.sort(function(a,b){ return a.dataset.date < b.dataset.date ? -1 : 1; });
-    pastBlocks.forEach(function(b) {
-      pastWrapper.insertBefore(b, null); // append inside wrapper
-    });
-
-    // Move future blocks out of past-wrapper into the main wrapper, before past-toggle-row (bottom)
-    var bottomToggleRow = document.querySelector('.past-toggle-row:not(#past-wrapper .past-toggle-row)');
-    futureBlocks.sort(function(a,b){ return a.dataset.date < b.dataset.date ? -1 : 1; });
-    futureBlocks.forEach(function(b) {
-      if (b.parentNode !== pastWrapper.parentNode) {
-        pastWrapper.parentNode.insertBefore(b, bottomToggleRow);
-      }
-    });
-
-    // Update toggle button labels
-    var count = pastBlocks.length;
-    if (count === 0) {
-      pastWrapper.style.display = 'none';
-      if (pastToggleBtn) pastToggleBtn.style.display = 'none';
-      if (pastToggleTop) pastToggleTop.style.display = 'none';
-    } else {
-      var firstDate = pastBlocks[0].dataset.date;
-      var lastDate = pastBlocks[pastBlocks.length - 1].dataset.date;
-      var monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-      function fmtShort(ds) {
-        var p = ds.split('-');
-        return monthNames[parseInt(p[1]) - 1] + ' ' + parseInt(p[2]);
-      }
-      var rangeStr = count === 1 ? fmtShort(firstDate) : fmtShort(firstDate) + '\u2013' + fmtShort(lastDate);
-      var label = count + ' past day' + (count === 1 ? '' : 's') + ' (' + rangeStr + ')';
-      if (pastToggleBtn) {
-        pastToggleBtn.style.display = '';
-        pastToggleBtn.innerHTML = pastVisible ? '&#x25B2;&nbsp;Hide past events' : '&#x25BC;&nbsp;' + label;
-      }
-      if (pastToggleTop) {
-        pastToggleTop.style.display = '';
-        pastToggleTop.innerHTML = pastVisible ? '&#x25B2;&nbsp;Hide past events' : '&#x25BC;&nbsp;' + label;
-      }
-    }
-  }
-
   function togglePast() {
     pastVisible = !pastVisible;
     pastWrapper.style.display = pastVisible ? '' : 'none';
-    classifyDays(); // refreshes button labels too
+    if (pastToggleBtn) pastToggleBtn.innerHTML = pastVisible ? '&#x25B2;&nbsp;Hide past events' : '&#x25BC;&nbsp;3 past days (Mar 25&#x2013;27)';
     applyFilters();
   }
   if (pastToggleBtn) pastToggleBtn.addEventListener('click', togglePast);
   if (pastToggleTop) pastToggleTop.addEventListener('click', togglePast);
 
-  // Initial classification
-  classifyDays();
-  pastWrapper.style.display = 'none'; // start collapsed
-  applyFilters();
-
-  // Re-classify at midnight so the page stays correct without a reload
-  function scheduleMidnight() {
-    var now = new Date();
-    var msUntilMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 1) - now;
-    setTimeout(function() {
-      classifyDays();
-      applyFilters();
-      scheduleMidnight();
-    }, msUntilMidnight);
-  }
-  scheduleMidnight();
-
-  // ── Date jump dropdown ────────────────────────────────────────────────────
-  (function() {
-    var sel = document.getElementById('date-jump');
-    if (!sel) return;
-    var monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-    var dayNames   = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-    var today = (function() {
-      var d = new Date();
-      return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
-    })();
-
-    // Populate from all day-blocks (past-wrapper ones included)
-    document.querySelectorAll('.day-block[data-date]').forEach(function(block) {
-      var ds = block.dataset.date; // "2026-03-28"
-      var parts = ds.split('-');
-      var d = new Date(parseInt(parts[0]), parseInt(parts[1])-1, parseInt(parts[2]));
-      var label = dayNames[d.getDay()] + ' ' + monthNames[d.getMonth()] + ' ' + d.getDate();
-      if (ds === today) label += ' ★';
-      var opt = document.createElement('option');
-      opt.value = ds;
-      opt.textContent = label;
-      if (ds < today) opt.style.color = '#666'; // muted for past days
-      sel.appendChild(opt);
-    });
-
-    sel.addEventListener('change', function() {
-      var val = sel.value;
-      if (!val) return;
-      // If it's a past day, show past wrapper first
-      var target = document.querySelector('.day-block[data-date="' + val + '"]');
-      if (!target) return;
-      if (target.classList.contains('past-day') && !pastVisible) {
-        pastVisible = true;
-        pastWrapper.style.display = '';
-        classifyDays();
-        applyFilters();
-      }
-      setTimeout(function() {
-        var filterBarH = document.getElementById('filter-bar').offsetHeight;
-        var top = target.getBoundingClientRect().top + window.scrollY - filterBarH - 12;
-        window.scrollTo({ top: top, behavior: 'smooth' });
-        // Reset dropdown to placeholder after scroll
-        setTimeout(function() { sel.value = ''; }, 600);
-      }, 50);
-    });
-  })();
-
   var mapToggleBtn = document.getElementById('map-toggle-btn');
   var mapEl = document.getElementById('venue-map');
   var mapVisible = false;
+  var mapInitialised = false;
   if (mapToggleBtn) {
     mapToggleBtn.addEventListener('click', function() {
       mapVisible = !mapVisible;
       mapEl.style.display = mapVisible ? 'block' : 'none';
       mapToggleBtn.classList.toggle('active', mapVisible);
       window.scrollTo({top: 0, behavior: 'smooth'});
-      if (mapVisible && window._venueMap) {
-        setTimeout(function() {
-          window._venueMap.invalidateSize();
-          window._venueMap.fitBounds(window._venueBounds);
-        }, 100);
+      if (mapVisible) {
+        if (!mapInitialised) {
+          mapInitialised = true;
+          initVenueMap();
+        } else {
+          setTimeout(function() {
+            window._venueMap.invalidateSize();
+            window._venueMap.fitBounds(window._venueBounds);
+          }, 100);
+        }
       }
     });
   }
+
+  var pastWrapper = document.getElementById('past-wrapper');
+  var pastToggleBtn = document.getElementById('past-toggle');
+  var pastToggleTop = document.getElementById('past-toggle-top');
+
+  function getTodayStr() {
+    var d = new Date();
+    return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+  }
+
+  function classifyDays() {
+    var today = getTodayStr();
+    var pastBlocks = [];
+    document.querySelectorAll('.day-block').forEach(function(block) {
+      var date = block.dataset.date;
+      if (date && date < today) {
+        block.classList.add('past-day');
+        pastBlocks.push(block);
+        if (!pastWrapper.contains(block)) pastWrapper.appendChild(block);
+      } else {
+        block.classList.remove('past-day');
+      }
+    });
+    var count = pastBlocks.length;
+    if (count === 0) {
+      if (pastToggleBtn) pastToggleBtn.style.display = 'none';
+      if (pastToggleTop) pastToggleTop.style.display = 'none';
+    } else {
+      var monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      function fmtShort(ds) { var p = ds.split('-'); return monthNames[parseInt(p[1])-1] + ' ' + parseInt(p[2]); }
+      pastBlocks.sort(function(a,b){ return a.dataset.date < b.dataset.date ? -1 : 1; });
+      var rangeStr = count === 1 ? fmtShort(pastBlocks[0].dataset.date) : fmtShort(pastBlocks[0].dataset.date) + '\u2013' + fmtShort(pastBlocks[pastBlocks.length-1].dataset.date);
+      var label = count + ' past day' + (count===1?'':'s') + ' (' + rangeStr + ')';
+      if (pastToggleBtn) { pastToggleBtn.style.display = ''; pastToggleBtn.innerHTML = pastVisible ? '&#x25B2;&nbsp;Hide past events' : '&#x25BC;&nbsp;' + label; }
+      if (pastToggleTop) { pastToggleTop.style.display = ''; pastToggleTop.innerHTML = pastVisible ? '&#x25B2;&nbsp;Hide past events' : '&#x25BC;&nbsp;' + label; }
+    }
+  }
+
+  function togglePast() {
+    pastVisible = !pastVisible;
+    pastWrapper.style.display = pastVisible ? '' : 'none';
+    classifyDays();
+    applyFilters();
+  }
+  if (pastToggleBtn) pastToggleBtn.addEventListener('click', togglePast);
+  if (pastToggleTop) pastToggleTop.addEventListener('click', togglePast);
+
+  classifyDays();
+  pastWrapper.style.display = 'none';
+  applyFilters();
+
+  function scheduleMidnight() {
+    var now = new Date();
+    var msUntilMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate()+1, 0, 0, 1) - now;
+    setTimeout(function() { classifyDays(); applyFilters(); scheduleMidnight(); }, msUntilMidnight);
+  }
+  scheduleMidnight();
 })();
 
 (function() {
+  window.initVenueMap = function() {
   var venues = [{"name": "Andy's Jazz Club", "initials": "A", "addr": "11 E. Hubbard St, River North", "lat": 41.8916, "lng": -87.628, "color": "#b45309", "maps_url": "https://maps.google.com/?q=11+E+Hubbard+St+Chicago+IL"}, {"name": "Green Mill", "initials": "GM", "addr": "4802 N Broadway, Uptown", "lat": 41.9659, "lng": -87.6579, "color": "#00a651", "maps_url": "https://maps.google.com/?q=4802+N+Broadway+Chicago+IL"}, {"name": "Jazz Showcase", "initials": "JS", "addr": "806 S. Plymouth Ct, South Loop", "lat": 41.8697, "lng": -87.6284, "color": "#8b1a1a", "maps_url": "https://maps.google.com/?q=806+S+Plymouth+Ct+Chicago+IL"}, {"name": "Winter's Jazz Club", "initials": "WJ", "addr": "465 N McClurg Ct, Streeterville", "lat": 41.8928, "lng": -87.6179, "color": "#c2410c", "maps_url": "https://maps.google.com/?q=465+N+McClurg+Ct+Chicago+IL"}, {"name": "Constellation", "initials": "Con", "addr": "3111 N Western Ave, Logan Square", "lat": 41.9343, "lng": -87.6892, "color": "#6d28d9", "maps_url": "https://maps.google.com/?q=3111+N+Western+Ave+Chicago+IL"}, {"name": "Elastic Arts", "initials": "EA", "addr": "2830 N Milwaukee Ave, Logan Square", "lat": 41.9309, "lng": -87.7002, "color": "#065f46", "maps_url": "https://maps.google.com/?q=2830+N+Milwaukee+Ave+Chicago+IL"}, {"name": "The Whistler", "initials": "W", "addr": "2421 N Milwaukee Ave, Logan Square", "lat": 41.9224, "lng": -87.6999, "color": "#be185d", "maps_url": "https://maps.google.com/?q=2421+N+Milwaukee+Ave+Chicago+IL"}, {"name": "Hungry Brain", "initials": "HB", "addr": "2319 W Belmont Ave, Chicago, IL 60618", "lat": 41.9212, "lng": -87.6997, "color": "#9f1239", "maps_url": "https://maps.google.com/?q=2319+W+Belmont+Ave+Chicago+IL"}, {"name": "Lemon", "initials": "Lem", "addr": "1600 W Grand Ave, West Town", "lat": 41.8909, "lng": -87.6694, "color": "#c8a200", "maps_url": "https://maps.google.com/?q=1600+W+Grand+Ave+Chicago+IL"}, {"name": "Le Piano", "initials": "LP", "addr": "6970 N Glenwood Ave, Rogers Park", "lat": 42.0079, "lng": -87.6604, "color": "#1e3a5f", "maps_url": "https://maps.google.com/?q=6970+N+Glenwood+Ave+Chicago+IL"}, {"name": "Fulton Street Collective", "initials": "FSC", "addr": "1821 W Hubbard St, #307, West Town", "lat": 41.89, "lng": -87.6748, "color": "#374151", "maps_url": "https://maps.google.com/?q=1821+W+Hubbard+St+Chicago+IL"}];
   var map = L.map('venue-map', {scrollWheelZoom: false});
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors © <a href="https://carto.com/">CARTO</a>',
+    subdomains: 'abcd', maxZoom: 19
   }).addTo(map);
+
+  var venueMarkers = [];
   venues.forEach(function(v) {
     var m = L.circleMarker([v.lat, v.lng], {
-      radius: 9, fillColor: v.color, color: '#fff', weight: 2.5, opacity: 1, fillOpacity: 0.92
+      radius: 8, fillColor: v.color, color: '#fff', weight: 2, opacity: 1, fillOpacity: 0.9
     }).addTo(map);
-    m.bindTooltip('<span style="font-family:\'Courier New\',monospace;font-size:0.82em;font-weight:bold;color:' + v.color + '">' + v.initials + '</span>', {
-      permanent: true,
-      direction: 'right',
-      offset: [10, 0],
-      className: 'venue-map-label'
-    });
+    m.bindTooltip('<span style="font-family:\'Courier New\',monospace;font-size:0.82em;font-weight:bold;color:' + v.color + '">' + v.name + '</span>', {sticky: true});
     m.on('click', function() {
       var a = document.createElement('a');
-      a.href = v.maps_url;
-      a.target = '_blank';
-      a.rel = 'noopener';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
+      a.href = v.maps_url; a.target = '_blank'; a.rel = 'noopener';
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
     });
+    venueMarkers.push({ marker: m });
   });
+
   var lats = venues.map(function(v) { return v.lat; });
   var lngs = venues.map(function(v) { return v.lng; });
   window._venueBounds = [
@@ -3556,65 +3481,53 @@
   ];
   map.setView([41.93, -87.645], 12);
   window._venueMap = map;
+  setTimeout(function() {
+    window._venueMap.invalidateSize();
+    window._venueMap.fitBounds(window._venueBounds);
+  }, 150);
+  }; // end initVenueMap
 })();
 
-// ── Google Calendar buttons ──────────────────────────────────────────────────
 (function() {
-  // Day-block dates keyed by data-date attribute
-  var calIcon = '<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>';
-
-  function pad(n) { return n < 10 ? '0' + n : '' + n; }
-
-  function gcalUrl(title, dateStr, timeStr, venue, details) {
-    // dateStr: "2026-03-28", timeStr: "8:00pm"
-    if (!dateStr) return null;
-    var parts = dateStr.split('-');
-    var yr = parts[0], mo = parts[1], dy = parts[2];
-    // Parse time
-    var m = timeStr.match(/^(\d+):(\d+)(am|pm)$/i);
+  function parseTime(str) {
+    var m = str.match(/(\d+):(\d+)\s*(am|pm)/i);
     if (!m) return null;
-    var h = parseInt(m[1]); var min = m[2]; var ampm = m[3].toLowerCase();
-    if (ampm === 'pm' && h !== 12) h += 12;
-    if (ampm === 'am' && h === 12) h = 0;
-    var startDt = yr + mo + dy + 'T' + pad(h) + min + '00';
-    // End = 90 min later
-    var endH = h + 1; var endMin = parseInt(min) + 30;
-    if (endMin >= 60) { endH += 1; endMin -= 60; }
-    if (endH >= 24) endH -= 24;
-    var endDt = yr + mo + dy + 'T' + pad(endH) + pad(endMin) + '00';
-    var params = new URLSearchParams({
-      action: 'TEMPLATE',
-      text: title + ' @ ' + venue,
-      dates: startDt + '/' + endDt,
-      details: details || '',
-      location: venue + ', Chicago, IL'
-    });
-    return 'https://calendar.google.com/calendar/render?' + params.toString();
+    var h = parseInt(m[1]), min = parseInt(m[2]), ap = m[3].toLowerCase();
+    if (ap === 'pm' && h !== 12) h += 12;
+    if (ap === 'am' && h === 12) h = 0;
+    return {h: h, m: min};
   }
-
+  function gcalDate(date, h, m) {
+    return date.replace(/-/g,'') + 'T' + String(h).padStart(2,'0') + String(m).padStart(2,'0') + '00';
+  }
+  var calIcon = '<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:-1px"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>';
   document.querySelectorAll('.day-block').forEach(function(block) {
-    var dateStr = block.dataset.date; // e.g. "2026-03-28"
+    var dateStr = block.dataset.date;
+    if (!dateStr) return;
     block.querySelectorAll('.event').forEach(function(ev) {
-      var venue = ev.dataset.venue || '';
       var timeEl = ev.querySelector('.event-time');
-      var actEl = ev.querySelector('.event-act');
+      var actEl  = ev.querySelector('.event-act a') || ev.querySelector('.event-act');
+      var venueEl = ev.querySelector('.venue-tag');
       var blurbEl = ev.querySelector('.event-blurb');
-      if (!timeEl || !actEl) return;
-      var timeStr = timeEl.textContent.trim().replace(/\s/g, '').toLowerCase();
-      var actText = actEl.textContent.trim();
-      var blurb = blurbEl ? blurbEl.textContent.trim() : '';
-      var url = gcalUrl(actText, dateStr, timeStr, venue, blurb);
-      if (!url) return;
-      var a = document.createElement('a');
-      a.href = url;
-      a.target = '_blank';
-      a.rel = 'noopener';
-      a.className = 'gcal-btn';
-      a.title = 'Add to Google Calendar';
-      a.innerHTML = calIcon + ' +gcal';
-      // Insert after event-price (or at end of event-meta)
-      var meta = ev.querySelector('.event-meta');
-      if (meta) meta.appendChild(a);
+      var metaEl  = ev.querySelector('.event-meta');
+      if (!timeEl || !actEl || !metaEl) return;
+      var t = parseTime(timeEl.textContent.trim());
+      if (!t) return;
+      var endH = t.h + 1, endM = t.m + 30;
+      if (endM >= 60) { endH++; endM -= 60; }
+      var title    = actEl.textContent.trim() + (venueEl ? ' @ ' + venueEl.textContent.trim() : '');
+      var details  = blurbEl ? blurbEl.textContent.trim() : '';
+      var location = venueEl ? venueEl.textContent.trim() + ', Chicago, IL' : 'Chicago, IL';
+      var url = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+        + '&text='     + encodeURIComponent(title)
+        + '&dates='    + gcalDate(dateStr, t.h, t.m) + '%2F' + gcalDate(dateStr, endH, endM)
+        + '&details='  + encodeURIComponent(details)
+        + '&location=' + encodeURIComponent(location);
+      var btn = document.createElement('a');
+      btn.href = url; btn.target = '_blank'; btn.rel = 'noopener';
+      btn.className = 'gcal-btn';
+      btn.innerHTML = calIcon + '+GCAL';
+      metaEl.appendChild(btn);
     });
   });
 })();
