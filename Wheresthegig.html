@@ -99,7 +99,7 @@
   body > .day-block, body > .past-toggle-row {
     max-width: 860px; margin-left: auto; margin-right: auto; padding: 0 20px;
   }
-  .day-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 14px; padding-bottom: 6px; border-bottom: 2px solid #221e19; }
+  .day-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 14px; padding-bottom: 6px; border-bottom: 4px solid #5a4800; position: sticky; top: var(--filterbar-h, 60px); z-index: 50; background: #0d0b09; }
   .day-name { font-size: 1.4em; font-weight: bold; color: #e8e0d4; }
   .day-date { font-size: 1em; color: #988070; font-style: italic; }
 
@@ -1104,9 +1104,6 @@
     <div class="event-act"><a href="https://jazzshowcase.com/calendar/" target="_blank" rel="noopener">Joel Ross</a></div>
     <div class="event-blurb">Late set with Joel Ross.</div>
   </div>
-    <div class="event-act"><a href="https://www.clarachicago.com/events" target="_blank" rel="noopener">Clara-oke</a></div>
-    <div class="event-blurb">Karaoke night at Clara. RSVP recommended.</div>
-  </div>
 </div>
 <div class="day-block" data-date="2026-04-03" data-dow="Friday">
   <div class="day-header"><span class="day-name">Friday</span><span class="day-date">April 3</span></div>
@@ -1857,9 +1854,6 @@
     <div class="event-act"><a href="https://jazzshowcase.com/calendar/" target="_blank" rel="noopener">Eric Alexander & Vincent Herring Quintet</a></div>
     <div class="event-blurb">Late set.</div>
   </div>
-    <div class="event-act"><a href="https://www.clarachicago.com/events" target="_blank" rel="noopener">Clara-oke</a></div>
-    <div class="event-blurb">Karaoke night at Clara. RSVP recommended.</div>
-  </div>
 </div>
 <div class="day-block" data-date="2026-04-10" data-dow="Friday">
   <div class="day-header"><span class="day-name">Friday</span><span class="day-date">April 10</span></div>
@@ -2556,9 +2550,6 @@
     <div class="event-act"><a href="https://jazzshowcase.com/calendar/" target="_blank" rel="noopener">Johnny O'Neal Trio</a></div>
     <div class="event-blurb">Late set with Johnny O'Neal.</div>
   </div>
-    <div class="event-act"><a href="https://www.clarachicago.com/events" target="_blank" rel="noopener">Clara-oke</a></div>
-    <div class="event-blurb">Karaoke night at Clara. RSVP recommended.</div>
-  </div>
 </div>
 <div class="day-block" data-date="2026-04-17" data-dow="Friday">
   <div class="day-header"><span class="day-name">Friday</span><span class="day-date">April 17</span></div>
@@ -3210,9 +3201,6 @@
     <div class="event-act"><a href="https://jazzshowcase.com/calendar/" target="_blank" rel="noopener">Winard Harper & Jeli Posse</a></div>
     <div class="event-blurb">Late set with Winard Harper.</div>
   </div>
-    <div class="event-act"><a href="https://www.clarachicago.com/events" target="_blank" rel="noopener">Clara-oke</a></div>
-    <div class="event-blurb">Karaoke night at Clara. RSVP recommended.</div>
-  </div>
 </div>
 <div class="day-block" data-date="2026-04-24" data-dow="Friday">
   <div class="day-header"><span class="day-name">Friday</span><span class="day-date">April 24</span></div>
@@ -3317,13 +3305,586 @@
   </div>
 </div>
 
+<div class="day-block" data-date="2026-04-25" data-dow="Saturday">
+  <div class="day-header"><span class="day-name">Saturday</span><span class="day-date">April 25</span></div>
+  <div class="event" data-venue="Andy's Jazz Club" data-dow="Saturday" data-free="false" data-catchall="false" style="border-left-color:#b45309">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#b45309">Andy's Jazz Club</span>
+      <span class="event-time">6:00pm</span>
+      <span class="event-price">$20</span>
+    </div>
+    <div class="event-act"><a href="https://www.andysjazzclub.com/music-calendar/" target="_blank" rel="noopener">Andrew Toombs — 1st Set</a></div>
+    <div class="event-blurb">Contemporary jazz pianist; two sets Friday-Saturday.</div>
+  </div>
+  <div class="event" data-venue="Andy's Jazz Club" data-dow="Saturday" data-free="false" data-catchall="false" style="border-left-color:#b45309">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#b45309">Andy's Jazz Club</span>
+      <span class="event-time">8:15pm</span>
+      <span class="event-price">$20</span>
+    </div>
+    <div class="event-act"><a href="https://www.andysjazzclub.com/music-calendar/" target="_blank" rel="noopener">Andrew Toombs — 2nd Set</a></div>
+    <div class="event-blurb">Second set with Andrew Toombs.</div>
+  </div>
+  <div class="event" data-venue="Andy's Jazz Club" data-dow="Saturday" data-free="false" data-catchall="false" style="border-left-color:#b45309">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#b45309">Andy's Jazz Club</span>
+      <span class="event-time">10:30pm</span>
+      <span class="event-price">$20</span>
+    </div>
+    <div class="event-act"><a href="https://www.andysjazzclub.com/music-calendar/" target="_blank" rel="noopener">Late Night Concert Series w/Ryan Cohan</a></div>
+    <div class="event-blurb">Late-night set with pianist Ryan Cohan.</div>
+  </div>
+  <div class="event" data-venue="Green Mill" data-dow="Saturday" data-free="true" data-catchall="true" style="border-left-color:#00a651">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#00a651">Green Mill</span>
+      <span class="event-time">4:00pm</span>
+      <span class="event-price">Free</span>
+    </div>
+    <div class="event-act"><a href="https://greenmilljazz.com/calendar/" target="_blank" rel="noopener">The Paper Machete</a></div>
+    <div class="event-blurb">Weekly Saturday afternoon variety show at the Green Mill.</div>
+  </div>
+  <div class="event" data-venue="Green Mill" data-dow="Saturday" data-free="false" data-catchall="false" style="border-left-color:#00a651">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#00a651">Green Mill</span>
+      <span class="event-time">9:00pm</span>
+      <span class="event-price">$25</span>
+    </div>
+    <div class="event-act"><a href="https://greenmilljazz.com/calendar/" target="_blank" rel="noopener">Kurt Elling Quintet</a></div>
+    <div class="event-blurb">Grammy-winning vocalist Kurt Elling; final night of two-night run.</div>
+  </div>
+  <div class="event" data-venue="Jazz Showcase" data-dow="Saturday" data-free="false" data-catchall="false" style="border-left-color:#8b1a1a">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#8b1a1a">Jazz Showcase</span>
+      <span class="event-time">8:00pm</span>
+      <span class="event-price">$25</span>
+    </div>
+    <div class="event-act"><a href="https://jazzshowcase.com/calendar/" target="_blank" rel="noopener">Winard Harper & Jeli Posse</a></div>
+    <div class="event-blurb">Drummer Winard Harper with Jeli Posse; final weekend night.</div>
+  </div>
+  <div class="event" data-venue="Jazz Showcase" data-dow="Saturday" data-free="false" data-catchall="false" style="border-left-color:#8b1a1a">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#8b1a1a">Jazz Showcase</span>
+      <span class="event-time">10:00pm</span>
+      <span class="event-price">$25</span>
+    </div>
+    <div class="event-act"><a href="https://jazzshowcase.com/calendar/" target="_blank" rel="noopener">Winard Harper & Jeli Posse</a></div>
+    <div class="event-blurb">Late set — Saturday night.</div>
+  </div>
+  <div class="event" data-venue="Winter's Jazz Club" data-dow="Saturday" data-free="false" data-catchall="false" style="border-left-color:#c2410c">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#c2410c">Winter's Jazz Club</span>
+      <span class="event-time">7:30pm</span>
+      <span class="event-price">$25 / $35 VIP</span>
+    </div>
+    <div class="event-act"><a href="https://www.wintersjazzclub.com/shows" target="_blank" rel="noopener">Bosman Twins Quintet</a></div>
+    <div class="event-blurb">Bosman Twins Quintet at Winter's Jazz Club.</div>
+  </div>
+  <div class="event" data-venue="Constellation" data-dow="Saturday" data-free="false" data-catchall="false" style="border-left-color:#6d28d9">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#6d28d9">Constellation</span>
+      <span class="event-time">8:30pm</span>
+      <span class="event-price">$20</span>
+    </div>
+    <div class="event-act"><a href="https://constellation-chicago.com/calendar/" target="_blank" rel="noopener">Rempis/Abrams/Ra + Baker</a></div>
+    <div class="event-blurb">Dave Rempis (sax), Josh Abrams, Avreeayl Ra; improvised jazz at Constellation.</div>
+  </div>
+  <div class="event" data-venue="Elastic Arts" data-dow="Saturday" data-free="false" data-catchall="false" style="border-left-color:#065f46">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#065f46">Elastic Arts</span>
+      <span class="event-time">8:30pm</span>
+      <span class="event-price">$15</span>
+    </div>
+    <div class="event-act"><a href="https://elasticarts.org/events" target="_blank" rel="noopener">Asian Improv aRts Midwest: Miminari Trio</a></div>
+    <div class="event-blurb">Kioto Aoki, Haruhi Kobayashi, Mai Sugimoto — traditional folk, jazz, and electronic.</div>
+  </div>
+  <div class="event" data-venue="Hungry Brain" data-dow="Saturday" data-free="false" data-catchall="false" style="border-left-color:#9f1239">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#9f1239">Hungry Brain</span>
+      <span class="event-time">7:00pm</span>
+      <span class="event-price">$15</span>
+    </div>
+    <div class="event-act"><a href="https://hungrybrainchicago.com" target="_blank" rel="noopener">The Joel Paterson Swing Quartet</a></div>
+    <div class="event-blurb">Joel Paterson on guitar; early show 7pm.</div>
+  </div>
+  <div class="event" data-venue="Le Piano" data-dow="Saturday" data-free="false" data-catchall="false" style="border-left-color:#1e3a5f">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#1e3a5f">Le Piano</span>
+      <span class="event-time">6:30pm</span>
+      <span class="event-price">$20</span>
+    </div>
+    <div class="event-act"><a href="https://le-piano.turntabletickets.com" target="_blank" rel="noopener">Bradley Williams Quartet</a></div>
+    <div class="event-blurb">Bradley Williams (piano/vocals), Dez Dezormeaux (tenor sax), Dan DeLorenzo (bass), Michael Schlick (drums).</div>
+  </div>
+  <div class="event" data-venue="Le Piano" data-dow="Saturday" data-free="false" data-catchall="false" style="border-left-color:#1e3a5f">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#1e3a5f">Le Piano</span>
+      <span class="event-time">9:30pm</span>
+      <span class="event-price">$15</span>
+    </div>
+    <div class="event-act"><a href="https://le-piano.turntabletickets.com" target="_blank" rel="noopener">Petra van Nuis & Dennis Luxion</a></div>
+    <div class="event-blurb">Vocalist Petra van Nuis and pianist Dennis Luxion; late set.</div>
+  </div>
+</div>
+
+<div class="day-block" data-date="2026-04-26" data-dow="Sunday">
+  <div class="day-header"><span class="day-name">Sunday</span><span class="day-date">April 26</span></div>
+  <div class="event" data-venue="Andy's Jazz Club" data-dow="Sunday" data-free="false" data-catchall="false" style="border-left-color:#b45309">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#b45309">Andy's Jazz Club</span>
+      <span class="event-time">6:00pm</span>
+      <span class="event-price">$20</span>
+    </div>
+    <div class="event-act"><a href="https://www.andysjazzclub.com/music-calendar/" target="_blank" rel="noopener">Andy Brown Quartet — 1st Set</a></div>
+    <div class="event-blurb">Guitarist Andy Brown leads his quartet; Sunday residency.</div>
+  </div>
+  <div class="event" data-venue="Andy's Jazz Club" data-dow="Sunday" data-free="false" data-catchall="false" style="border-left-color:#b45309">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#b45309">Andy's Jazz Club</span>
+      <span class="event-time">8:15pm</span>
+      <span class="event-price">$20</span>
+    </div>
+    <div class="event-act"><a href="https://www.andysjazzclub.com/music-calendar/" target="_blank" rel="noopener">Andy Brown Quartet — 2nd Set</a></div>
+    <div class="event-blurb">Second set with the Andy Brown Quartet.</div>
+  </div>
+  <div class="event" data-venue="Andy's Jazz Club" data-dow="Sunday" data-free="false" data-catchall="false" style="border-left-color:#b45309">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#b45309">Andy's Jazz Club</span>
+      <span class="event-time">10:30pm</span>
+      <span class="event-price">$20</span>
+    </div>
+    <div class="event-act"><a href="https://www.andysjazzclub.com/music-calendar/" target="_blank" rel="noopener">Late Night Concert Series w/Sunday Soul</a></div>
+    <div class="event-blurb">Late-night set with Sunday Soul.</div>
+  </div>
+  <div class="event" data-venue="Green Mill" data-dow="Sunday" data-free="true" data-catchall="false" style="border-left-color:#00a651">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#00a651">Green Mill</span>
+      <span class="event-time">8:00pm</span>
+      <span class="event-price">Free</span>
+    </div>
+    <div class="event-act"><a href="https://greenmilljazz.com/calendar/" target="_blank" rel="noopener">Soul Message Band</a></div>
+    <div class="event-blurb">Sunday night residency with the Soul Message Band. Free.</div>
+  </div>
+  <div class="event" data-venue="Jazz Showcase" data-dow="Sunday" data-free="false" data-catchall="false" style="border-left-color:#8b1a1a">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#8b1a1a">Jazz Showcase</span>
+      <span class="event-time">4:00pm</span>
+      <span class="event-price">$25</span>
+    </div>
+    <div class="event-act"><a href="https://jazzshowcase.com/calendar/" target="_blank" rel="noopener">Winard Harper & Jeli Posse</a></div>
+    <div class="event-blurb">Sunday matinee with drummer Winard Harper and Jeli Posse.</div>
+  </div>
+  <div class="event" data-venue="Jazz Showcase" data-dow="Sunday" data-free="false" data-catchall="false" style="border-left-color:#8b1a1a">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#8b1a1a">Jazz Showcase</span>
+      <span class="event-time">8:00pm</span>
+      <span class="event-price">$25</span>
+    </div>
+    <div class="event-act"><a href="https://jazzshowcase.com/calendar/" target="_blank" rel="noopener">Winard Harper & Jeli Posse</a></div>
+    <div class="event-blurb">Sunday evening with Winard Harper. Final night of the run.</div>
+  </div>
+  <div class="event" data-venue="Winter's Jazz Club" data-dow="Sunday" data-free="false" data-catchall="false" style="border-left-color:#c2410c">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#c2410c">Winter's Jazz Club</span>
+      <span class="event-time">7:30pm</span>
+      <span class="event-price">$25 / $35 VIP</span>
+    </div>
+    <div class="event-act"><a href="https://www.wintersjazzclub.com/shows" target="_blank" rel="noopener">Bobbi Wilsyn & Company — International Jazz Day</a></div>
+    <div class="event-blurb">Celebrating International Jazz Day: It Started in Bronzeville.</div>
+  </div>
+  <div class="event" data-venue="Constellation" data-dow="Sunday" data-free="true" data-catchall="false" style="border-left-color:#6d28d9">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#6d28d9">Constellation</span>
+      <span class="event-time">8:30pm</span>
+      <span class="event-price">Free</span>
+    </div>
+    <div class="event-act"><a href="https://constellation-chicago.com/calendar/" target="_blank" rel="noopener">Frequency Series: Flens & Friends</a></div>
+    <div class="event-blurb">Frequency Series monthly showcase at Constellation.</div>
+  </div>
+  <div class="event" data-venue="Elastic Arts" data-dow="Sunday" data-free="true" data-catchall="false" style="border-left-color:#065f46">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#065f46">Elastic Arts</span>
+      <span class="event-time">7:30pm</span>
+      <span class="event-price">Free</span>
+    </div>
+    <div class="event-act"><a href="https://elasticarts.org/events" target="_blank" rel="noopener">The Middle: Priya Fink, Will Stevens & JT O'Toole</a></div>
+    <div class="event-blurb">Flutist Priya Fink, oboist Will Stevens, bassist JT O'Toole — eclectic chamber music.</div>
+  </div>
+  <div class="event" data-venue="Le Piano" data-dow="Sunday" data-free="false" data-catchall="false" style="border-left-color:#1e3a5f">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#1e3a5f">Le Piano</span>
+      <span class="event-time">4:00pm</span>
+      <span class="event-price">$15</span>
+    </div>
+    <div class="event-act"><a href="https://le-piano.turntabletickets.com" target="_blank" rel="noopener">Sunday Spotlight: Shannon Wright</a></div>
+    <div class="event-blurb">Gospel-rooted, jazz-informed vocalist Shannon Wright; special homecoming performance.</div>
+  </div>
+  <div class="event" data-venue="Le Piano" data-dow="Sunday" data-free="true" data-catchall="false" style="border-left-color:#1e3a5f">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#1e3a5f">Le Piano</span>
+      <span class="event-time">7:00pm</span>
+      <span class="event-price">Free</span>
+    </div>
+    <div class="event-act"><a href="https://le-piano.turntabletickets.com" target="_blank" rel="noopener">Latin Jazz with Jose Valdez</a></div>
+    <div class="event-blurb">Pianist Jose Valdez leads an ensemble in Latin jazz classics.</div>
+  </div>
+</div>
+
+<div class="day-block" data-date="2026-04-27" data-dow="Monday">
+  <div class="day-header"><span class="day-name">Monday</span><span class="day-date">April 27</span></div>
+  <div class="event" data-venue="Andy's Jazz Club" data-dow="Monday" data-free="false" data-catchall="false" style="border-left-color:#b45309">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#b45309">Andy's Jazz Club</span>
+      <span class="event-time">6:00pm</span>
+      <span class="event-price">$20</span>
+    </div>
+    <div class="event-act"><a href="https://www.andysjazzclub.com/music-calendar/" target="_blank" rel="noopener">The Shout Section Big Band — 1st Set</a></div>
+    <div class="event-blurb">Chicago big band; Monday evening at Andy's.</div>
+  </div>
+  <div class="event" data-venue="Andy's Jazz Club" data-dow="Monday" data-free="false" data-catchall="false" style="border-left-color:#b45309">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#b45309">Andy's Jazz Club</span>
+      <span class="event-time">8:15pm</span>
+      <span class="event-price">$20</span>
+    </div>
+    <div class="event-act"><a href="https://www.andysjazzclub.com/music-calendar/" target="_blank" rel="noopener">The Shout Section Big Band — 2nd Set</a></div>
+    <div class="event-blurb">Second set with the Shout Section Big Band.</div>
+  </div>
+  <div class="event" data-venue="Green Mill" data-dow="Monday" data-free="true" data-catchall="false" style="border-left-color:#00a651">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#00a651">Green Mill</span>
+      <span class="event-time">8:00pm</span>
+      <span class="event-price">Free</span>
+    </div>
+    <div class="event-act"><a href="https://greenmilljazz.com/calendar/" target="_blank" rel="noopener">Joel Paterson</a></div>
+    <div class="event-blurb">Guitarist Joel Paterson's Monday night residency at the Green Mill. Free.</div>
+  </div>
+  <div class="event" data-venue="Jazz Showcase" data-dow="Monday" data-free="false" data-catchall="false" style="border-left-color:#8b1a1a">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#8b1a1a">Jazz Showcase</span>
+      <span class="event-time">8:00pm</span>
+      <span class="event-price">TBD</span>
+    </div>
+    <div class="event-act"><a href="https://jazzshowcase.com/calendar/" target="_blank" rel="noopener">International Jazz Day: Made in Chicago</a></div>
+    <div class="event-blurb">Special International Jazz Day celebration event; all-Chicago lineup.</div>
+  </div>
+  <div class="event" data-venue="Jazz Showcase" data-dow="Monday" data-free="false" data-catchall="false" style="border-left-color:#8b1a1a">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#8b1a1a">Jazz Showcase</span>
+      <span class="event-time">10:00pm</span>
+      <span class="event-price">TBD</span>
+    </div>
+    <div class="event-act"><a href="https://jazzshowcase.com/calendar/" target="_blank" rel="noopener">International Jazz Day: Made in Chicago (Late Set)</a></div>
+    <div class="event-blurb">Late set — International Jazz Day celebration.</div>
+  </div>
+  <div class="event" data-venue="Elastic Arts" data-dow="Monday" data-free="true" data-catchall="false" style="border-left-color:#065f46">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#065f46">Elastic Arts</span>
+      <span class="event-time">8:00pm</span>
+      <span class="event-price">Free</span>
+    </div>
+    <div class="event-act"><a href="https://elasticarts.org/events" target="_blank" rel="noopener">Homeroom Residency: Tim Daisy Chrome Yellow</a></div>
+    <div class="event-blurb">Percussionist/composer Tim Daisy presents new scores and conductions; final Monday installment.</div>
+  </div>
+  <div class="event" data-venue="Le Piano" data-dow="Monday" data-free="false" data-catchall="false" style="border-left-color:#1e3a5f">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#1e3a5f">Le Piano</span>
+      <span class="event-time">7:00pm</span>
+      <span class="event-price">$10</span>
+    </div>
+    <div class="event-act"><a href="https://le-piano.turntabletickets.com" target="_blank" rel="noopener">Monday Jam hosted by Danny G Felix</a></div>
+    <div class="event-blurb">Open jam session at Le Piano, all instruments and vocalists welcome.</div>
+  </div>
+</div>
+
+<div class="day-block" data-date="2026-04-28" data-dow="Tuesday">
+  <div class="day-header"><span class="day-name">Tuesday</span><span class="day-date">April 28</span></div>
+  <div class="event" data-venue="Andy's Jazz Club" data-dow="Tuesday" data-free="false" data-catchall="false" style="border-left-color:#b45309">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#b45309">Andy's Jazz Club</span>
+      <span class="event-time">6:00pm</span>
+      <span class="event-price">$20</span>
+    </div>
+    <div class="event-act"><a href="https://www.andysjazzclub.com/music-calendar/" target="_blank" rel="noopener">Tenor Time — 1st Set</a></div>
+    <div class="event-blurb">Tenor saxophone showcase; Tuesday series at Andy's.</div>
+  </div>
+  <div class="event" data-venue="Andy's Jazz Club" data-dow="Tuesday" data-free="false" data-catchall="false" style="border-left-color:#b45309">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#b45309">Andy's Jazz Club</span>
+      <span class="event-time">8:15pm</span>
+      <span class="event-price">$20</span>
+    </div>
+    <div class="event-act"><a href="https://www.andysjazzclub.com/music-calendar/" target="_blank" rel="noopener">Tenor Time — 2nd Set</a></div>
+    <div class="event-blurb">Second set — Tenor Time.</div>
+  </div>
+  <div class="event" data-venue="Green Mill" data-dow="Tuesday" data-free="true" data-catchall="false" style="border-left-color:#00a651">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#00a651">Green Mill</span>
+      <span class="event-time">8:00pm</span>
+      <span class="event-price">Free</span>
+    </div>
+    <div class="event-act"><a href="https://greenmilljazz.com/calendar/" target="_blank" rel="noopener">Chicago Cellar Boys</a></div>
+    <div class="event-blurb">Hot jazz and swing; Tuesday residency at the Green Mill. Free.</div>
+  </div>
+  <div class="event" data-venue="Jazz Showcase" data-dow="Tuesday" data-free="false" data-catchall="false" style="border-left-color:#8b1a1a">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#8b1a1a">Jazz Showcase</span>
+      <span class="event-time">8:00pm</span>
+      <span class="event-price">$25</span>
+    </div>
+    <div class="event-act"><a href="https://jazzshowcase.com/calendar/" target="_blank" rel="noopener">Petra's Recession Seven</a></div>
+    <div class="event-blurb">Chicago jazz ensemble Petra's Recession Seven at the Jazz Showcase.</div>
+  </div>
+  <div class="event" data-venue="Jazz Showcase" data-dow="Tuesday" data-free="false" data-catchall="false" style="border-left-color:#8b1a1a">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#8b1a1a">Jazz Showcase</span>
+      <span class="event-time">10:00pm</span>
+      <span class="event-price">$25</span>
+    </div>
+    <div class="event-act"><a href="https://jazzshowcase.com/calendar/" target="_blank" rel="noopener">Petra's Recession Seven (Late Set)</a></div>
+    <div class="event-blurb">Late set — Tuesday night at Jazz Showcase.</div>
+  </div>
+  <div class="event" data-venue="The Whistler" data-dow="Tuesday" data-free="true" data-catchall="false" style="border-left-color:#be185d">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#be185d">The Whistler</span>
+      <span class="event-time">8:00pm</span>
+      <span class="event-price">Free</span>
+    </div>
+    <div class="event-act"><a href="https://whistlerchicago.com/calendar" target="_blank" rel="noopener">Relax Attack Jazz Series: Dave Rempis / Tyler Damon Duo</a></div>
+    <div class="event-blurb">Dave Rempis (sax) and Tyler Damon (drums); Tuesday jazz at the Whistler.</div>
+  </div>
+  <div class="event" data-venue="Fulton Street Collective" data-dow="Tuesday" data-free="true" data-catchall="false" style="border-left-color:#374151">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#374151">Fulton Street Collective</span>
+      <span class="event-time">7:30pm</span>
+      <span class="event-price">Donation</span>
+    </div>
+    <div class="event-act"><a href="https://fultonstreetcollective.com/events/" target="_blank" rel="noopener">Joe Henderson's In 'n Out — Live at FSC</a></div>
+    <div class="event-blurb">JRAC presents Kabir Dalaw quartet performing Joe Henderson's 1964 Blue Note album live. Live painting by Jessie Burton.</div>
+  </div>
+  <div class="event" data-venue="Le Piano" data-dow="Tuesday" data-free="true" data-catchall="false" style="border-left-color:#1e3a5f">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#1e3a5f">Le Piano</span>
+      <span class="event-time">7:00pm</span>
+      <span class="event-price">Free</span>
+    </div>
+    <div class="event-act"><a href="https://le-piano.turntabletickets.com" target="_blank" rel="noopener">Cabaret Night: Nitz & Friends North</a></div>
+    <div class="event-blurb">Chicago's longest-running cabaret show with host Daryl Nitz.</div>
+  </div>
+</div>
+
+<div class="day-block" data-date="2026-04-29" data-dow="Wednesday">
+  <div class="day-header"><span class="day-name">Wednesday</span><span class="day-date">April 29</span></div>
+  <div class="event" data-venue="Andy's Jazz Club" data-dow="Wednesday" data-free="false" data-catchall="false" style="border-left-color:#b45309">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#b45309">Andy's Jazz Club</span>
+      <span class="event-time">6:00pm</span>
+      <span class="event-price">$20</span>
+    </div>
+    <div class="event-act"><a href="https://www.andysjazzclub.com/music-calendar/" target="_blank" rel="noopener">Charles Heath Quartet — 1st Set</a></div>
+    <div class="event-blurb">Veteran Chicago drummer and bandleader; straight-ahead swinging jazz.</div>
+  </div>
+  <div class="event" data-venue="Andy's Jazz Club" data-dow="Wednesday" data-free="false" data-catchall="false" style="border-left-color:#b45309">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#b45309">Andy's Jazz Club</span>
+      <span class="event-time">8:15pm</span>
+      <span class="event-price">$20</span>
+    </div>
+    <div class="event-act"><a href="https://www.andysjazzclub.com/music-calendar/" target="_blank" rel="noopener">Charles Heath Quartet — 2nd Set</a></div>
+    <div class="event-blurb">Second set with the Charles Heath Quartet.</div>
+  </div>
+  <div class="event" data-venue="Andy's Jazz Club" data-dow="Wednesday" data-free="false" data-catchall="false" style="border-left-color:#b45309">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#b45309">Andy's Jazz Club</span>
+      <span class="event-time">10:00pm</span>
+      <span class="event-price">$10</span>
+    </div>
+    <div class="event-act"><a href="https://www.andysjazzclub.com/music-calendar/" target="_blank" rel="noopener">The Last Minute Jam Session</a></div>
+    <div class="event-blurb">Open jam session; $10. Reservations required.</div>
+  </div>
+  <div class="event" data-venue="Green Mill" data-dow="Wednesday" data-free="false" data-catchall="false" style="border-left-color:#00a651">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#00a651">Green Mill</span>
+      <span class="event-time">9:00pm</span>
+      <span class="event-price">$10</span>
+    </div>
+    <div class="event-act"><a href="https://greenmilljazz.com/calendar/" target="_blank" rel="noopener">Alfonso Ponticelli & Canzoni Italiane</a></div>
+    <div class="event-blurb">Weekly Wednesday residency with swinging Italian jazz.</div>
+  </div>
+  <div class="event" data-venue="Jazz Showcase" data-dow="Wednesday" data-free="false" data-catchall="false" style="border-left-color:#8b1a1a">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#8b1a1a">Jazz Showcase</span>
+      <span class="event-time">8:00pm</span>
+      <span class="event-price">$25</span>
+    </div>
+    <div class="event-act"><a href="https://jazzshowcase.com/calendar/" target="_blank" rel="noopener">Connor Bernhard Quintet — Pathways Album Release</a></div>
+    <div class="event-blurb">Connor Bernhard Quintet album release show for Pathways.</div>
+  </div>
+  <div class="event" data-venue="Jazz Showcase" data-dow="Wednesday" data-free="false" data-catchall="false" style="border-left-color:#8b1a1a">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#8b1a1a">Jazz Showcase</span>
+      <span class="event-time">10:00pm</span>
+      <span class="event-price">$25</span>
+    </div>
+    <div class="event-act"><a href="https://jazzshowcase.com/calendar/" target="_blank" rel="noopener">Connor Bernhard Quintet (Late Set)</a></div>
+    <div class="event-blurb">Late set — Wednesday night.</div>
+  </div>
+  <div class="event" data-venue="Winter's Jazz Club" data-dow="Wednesday" data-free="false" data-catchall="false" style="border-left-color:#c2410c">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#c2410c">Winter's Jazz Club</span>
+      <span class="event-time">7:30pm</span>
+      <span class="event-price">$25 / $35 VIP</span>
+    </div>
+    <div class="event-act"><a href="https://www.wintersjazzclub.com/shows" target="_blank" rel="noopener">Patricia Barber</a></div>
+    <div class="event-blurb">Legendary Chicago pianist and vocalist Patricia Barber at Winter's.</div>
+  </div>
+  <div class="event" data-venue="The Whistler" data-dow="Wednesday" data-free="true" data-catchall="false" style="border-left-color:#be185d">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#be185d">The Whistler</span>
+      <span class="event-time">8:00pm</span>
+      <span class="event-price">Free</span>
+    </div>
+    <div class="event-act"><a href="https://whistlerchicago.com/calendar" target="_blank" rel="noopener">Relax Attack Jazz Series: Heat On</a></div>
+    <div class="event-blurb">Ed Wilkerson (reeds), Fred Jackson Jr. (sax), Nick Macri (bass), Lily Finnegan. Free.</div>
+  </div>
+  <div class="event" data-venue="Hungry Brain" data-dow="Wednesday" data-free="true" data-catchall="false" style="border-left-color:#9f1239">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#9f1239">Hungry Brain</span>
+      <span class="event-time">9:00pm</span>
+      <span class="event-price">Free</span>
+    </div>
+    <div class="event-act"><a href="https://hungrybrainchicago.com" target="_blank" rel="noopener">Wednesday Night Fellowship with Ted Sirota</a></div>
+    <div class="event-blurb">Ted Sirota's long-running Wednesday night jazz community; free admission.</div>
+  </div>
+  <div class="event" data-venue="Le Piano" data-dow="Wednesday" data-free="false" data-catchall="false" style="border-left-color:#1e3a5f">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#1e3a5f">Le Piano</span>
+      <span class="event-time">7:00pm</span>
+      <span class="event-price">$15</span>
+    </div>
+    <div class="event-act"><a href="https://le-piano.turntabletickets.com" target="_blank" rel="noopener">Liz Mandeville's Bourbon & Blues Review</a></div>
+    <div class="event-blurb">Chicago Blues Hall of Fame artist Liz Mandeville; 30th anniversary of her debut.</div>
+  </div>
+  <div class="event" data-venue="Fulton Street Collective" data-dow="Wednesday" data-free="true" data-catchall="false" style="border-left-color:#374151">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#374151">Fulton Street Collective</span>
+      <span class="event-time">7:30pm</span>
+      <span class="event-price">Donation</span>
+    </div>
+    <div class="event-act"><a href="https://fultonstreetcollective.com/events/" target="_blank" rel="noopener">EXTRAPOLATION: Tom McCarthy Quartet plays McLaughlin</a></div>
+    <div class="event-blurb">JRAC presents Tom McCarthy Quartet performing John McLaughlin's 1969 debut EXTRAPOLATION live.</div>
+  </div>
+</div>
+
+<div class="day-block" data-date="2026-04-30" data-dow="Thursday">
+  <div class="day-header"><span class="day-name">Thursday</span><span class="day-date">April 30</span></div>
+  <div class="event" data-venue="Andy's Jazz Club" data-dow="Thursday" data-free="false" data-catchall="false" style="border-left-color:#b45309">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#b45309">Andy's Jazz Club</span>
+      <span class="event-time">6:00pm</span>
+      <span class="event-price">$20</span>
+    </div>
+    <div class="event-act"><a href="https://www.andysjazzclub.com/music-calendar/" target="_blank" rel="noopener">Mario Abney Quartet — 1st Set</a></div>
+    <div class="event-blurb">Chicago trumpeter Mario Abney leads his quartet; Thursday residency.</div>
+  </div>
+  <div class="event" data-venue="Andy's Jazz Club" data-dow="Thursday" data-free="false" data-catchall="false" style="border-left-color:#b45309">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#b45309">Andy's Jazz Club</span>
+      <span class="event-time">8:15pm</span>
+      <span class="event-price">$20</span>
+    </div>
+    <div class="event-act"><a href="https://www.andysjazzclub.com/music-calendar/" target="_blank" rel="noopener">Mario Abney Quartet — 2nd Set</a></div>
+    <div class="event-blurb">Second set with the Mario Abney Quartet.</div>
+  </div>
+  <div class="event" data-venue="Andy's Jazz Club" data-dow="Thursday" data-free="false" data-catchall="false" style="border-left-color:#b45309">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#b45309">Andy's Jazz Club</span>
+      <span class="event-time">10:00pm</span>
+      <span class="event-price">$10</span>
+    </div>
+    <div class="event-act"><a href="https://www.andysjazzclub.com/music-calendar/" target="_blank" rel="noopener">The Chi-Nola Jam Session</a></div>
+    <div class="event-blurb">Open jam; $10. Reservations required.</div>
+  </div>
+  <div class="event" data-venue="Green Mill" data-dow="Thursday" data-free="true" data-catchall="false" style="border-left-color:#00a651">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#00a651">Green Mill</span>
+      <span class="event-time">8:00pm</span>
+      <span class="event-price">Free</span>
+    </div>
+    <div class="event-act"><a href="https://greenmilljazz.com/calendar/" target="_blank" rel="noopener">Andy Brown Quartet</a></div>
+    <div class="event-blurb">Guitarist Andy Brown; early Thursday set at the Green Mill. Free.</div>
+  </div>
+  <div class="event" data-venue="Green Mill" data-dow="Thursday" data-free="false" data-catchall="false" style="border-left-color:#00a651">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#00a651">Green Mill</span>
+      <span class="event-time">10:00pm</span>
+      <span class="event-price">$10</span>
+    </div>
+    <div class="event-act"><a href="https://greenmilljazz.com/calendar/" target="_blank" rel="noopener">Alan Gresik's Swing Orchestra</a></div>
+    <div class="event-blurb">Alan Gresik's Swing Orchestra; late-night Thursday set.</div>
+  </div>
+  <div class="event" data-venue="Jazz Showcase" data-dow="Thursday" data-free="false" data-catchall="false" style="border-left-color:#8b1a1a">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#8b1a1a">Jazz Showcase</span>
+      <span class="event-time">8:00pm</span>
+      <span class="event-price">$25</span>
+    </div>
+    <div class="event-act"><a href="https://jazzshowcase.com/calendar/" target="_blank" rel="noopener">Camille Thurman with the Darrell Green Quartet</a></div>
+    <div class="event-blurb">Tenor saxophonist/vocalist Camille Thurman with drummer Darrell Green's quartet.</div>
+  </div>
+  <div class="event" data-venue="Jazz Showcase" data-dow="Thursday" data-free="false" data-catchall="false" style="border-left-color:#8b1a1a">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#8b1a1a">Jazz Showcase</span>
+      <span class="event-time">10:00pm</span>
+      <span class="event-price">$25</span>
+    </div>
+    <div class="event-act"><a href="https://jazzshowcase.com/calendar/" target="_blank" rel="noopener">Camille Thurman with the Darrell Green Quartet (Late Set)</a></div>
+    <div class="event-blurb">Late set — Thursday night.</div>
+  </div>
+  <div class="event" data-venue="Constellation" data-dow="Thursday" data-free="false" data-catchall="false" style="border-left-color:#6d28d9">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#6d28d9">Constellation</span>
+      <span class="event-time">8:30pm</span>
+      <span class="event-price">TBD</span>
+    </div>
+    <div class="event-act"><a href="https://constellation-chicago.com/calendar/" target="_blank" rel="noopener">The Messthetics and James Brandon Lewis + YR Knives</a></div>
+    <div class="event-blurb">James Brandon Lewis (tenor sax) with The Messthetics (Fugazi rhythm section) plus YR Knives.</div>
+  </div>
+  <div class="event" data-venue="Hungry Brain" data-dow="Thursday" data-free="false" data-catchall="false" style="border-left-color:#9f1239">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#9f1239">Hungry Brain</span>
+      <span class="event-time">9:00pm</span>
+      <span class="event-price">$15</span>
+    </div>
+    <div class="event-act"><a href="https://hungrybrainchicago.com" target="_blank" rel="noopener">Nick Mazzarella Residency</a></div>
+    <div class="event-blurb">Altoist Nick Mazzarella's ongoing Thursday residency at the Hungry Brain.</div>
+  </div>
+  <div class="event" data-venue="Le Piano" data-dow="Thursday" data-free="true" data-catchall="false" style="border-left-color:#1e3a5f">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#1e3a5f">Le Piano</span>
+      <span class="event-time">7:00pm</span>
+      <span class="event-price">Free</span>
+    </div>
+    <div class="event-act"><a href="https://le-piano.turntabletickets.com" target="_blank" rel="noopener">Ben Paterson Organ Trio</a></div>
+    <div class="event-blurb">Ben Paterson (Hammond B3), Bobby Broom (guitar), Greg Artry; Thursday residency.</div>
+  </div>
+  <div class="event" data-venue="Fulton Street Collective" data-dow="Thursday" data-free="true" data-catchall="false" style="border-left-color:#374151">
+    <div class="event-meta">
+      <span class="venue-tag" style="background:#374151">Fulton Street Collective</span>
+      <span class="event-time">6:00pm</span>
+      <span class="event-price">Free</span>
+    </div>
+    <div class="event-act"><a href="https://fultonstreetcollective.com/events/" target="_blank" rel="noopener">Jazz Occurrence: International Jazz Day</a></div>
+    <div class="event-blurb">FSC celebrates International Jazz Day with a multi-artist jazz showcase.</div>
+  </div>
+</div>
+
   <div class="footer">
-    Compiled March 27, 2026 &mdash; Verify show times and admission with each venue before attending.<br>
+    Compiled March 30, 2026 &mdash; Verify show times and admission with each venue before attending.<br>
     andysjazzclub.com &bull; greenmilljazz.com &bull; jazzshowcase.com &bull; wintersjazzclub.com &bull; constellation-chicago.com &bull; elasticarts.org &bull; whistlerchicago.com &bull; hungrybrainchicago.com &bull; lemonchicago.net &bull; lepianochicago.com &bull; fultonstreetcollective.com
   </div>
 </div><script>
 (function() {
-  var ALL_VENUES = ["Andy's Jazz Club", "Green Mill", "Jazz Showcase", "Winter's Jazz Club", "Constellation", "Elastic Arts", "The Whistler", "Hungry Brain", "Lemon", "Le Piano", "Fulton Street Collective"];
+  var ALL_VENUES = ["Andy's Jazz Club", "Green Mill", "Jazz Showcase", "Winter's Jazz Club", "Constellation", "Elastic Arts", "The Whistler", "Hungry Brain", "Lemon", "Le Piano", "Fulton Street Collective", "Clara Chicago"];
   var activeVenues = new Set(ALL_VENUES);
   var freeOnly = false;
   var pastVisible = false;
@@ -3511,7 +4072,7 @@
 
 (function() {
   window.initVenueMap = function() {
-  var venues = [{"name": "Andy's Jazz Club", "initials": "A", "addr": "11 E. Hubbard St, River North", "lat": 41.8916, "lng": -87.628, "color": "#b45309", "maps_url": "https://maps.google.com/?q=11+E+Hubbard+St+Chicago+IL"}, {"name": "Green Mill", "initials": "GM", "addr": "4802 N Broadway, Uptown", "lat": 41.9659, "lng": -87.6579, "color": "#00a651", "maps_url": "https://maps.google.com/?q=4802+N+Broadway+Chicago+IL"}, {"name": "Jazz Showcase", "initials": "JS", "addr": "806 S. Plymouth Ct, South Loop", "lat": 41.8697, "lng": -87.6284, "color": "#8b1a1a", "maps_url": "https://maps.google.com/?q=806+S+Plymouth+Ct+Chicago+IL"}, {"name": "Winter's Jazz Club", "initials": "WJ", "addr": "465 N McClurg Ct, Streeterville", "lat": 41.8928, "lng": -87.6179, "color": "#c2410c", "maps_url": "https://maps.google.com/?q=465+N+McClurg+Ct+Chicago+IL"}, {"name": "Constellation", "initials": "Con", "addr": "3111 N Western Ave, Logan Square", "lat": 41.9343, "lng": -87.6892, "color": "#6d28d9", "maps_url": "https://maps.google.com/?q=3111+N+Western+Ave+Chicago+IL"}, {"name": "Elastic Arts", "initials": "EA", "addr": "2830 N Milwaukee Ave, Logan Square", "lat": 41.9309, "lng": -87.7002, "color": "#065f46", "maps_url": "https://maps.google.com/?q=2830+N+Milwaukee+Ave+Chicago+IL"}, {"name": "The Whistler", "initials": "W", "addr": "2421 N Milwaukee Ave, Logan Square", "lat": 41.9224, "lng": -87.6999, "color": "#be185d", "maps_url": "https://maps.google.com/?q=2421+N+Milwaukee+Ave+Chicago+IL"}, {"name": "Hungry Brain", "initials": "HB", "addr": "2319 W Belmont Ave, Chicago, IL 60618", "lat": 41.9212, "lng": -87.6997, "color": "#9f1239", "maps_url": "https://maps.google.com/?q=2319+W+Belmont+Ave+Chicago+IL"}, {"name": "Lemon", "initials": "Lem", "addr": "1600 W Grand Ave, West Town", "lat": 41.8909, "lng": -87.6694, "color": "#c8a200", "maps_url": "https://maps.google.com/?q=1600+W+Grand+Ave+Chicago+IL"}, {"name": "Le Piano", "initials": "LP", "addr": "6970 N Glenwood Ave, Rogers Park", "lat": 42.0079, "lng": -87.6604, "color": "#1e3a5f", "maps_url": "https://maps.google.com/?q=6970+N+Glenwood+Ave+Chicago+IL"}, {"name": "Fulton Street Collective", "initials": "FSC", "addr": "1821 W Hubbard St, #307, West Town", "lat": 41.89, "lng": -87.6748, "color": "#374151", "maps_url": "https://maps.google.com/?q=1821+W+Hubbard+St+Chicago+IL"}, {"name": "Clara Chicago", "initials": "C", "addr": "2027 W North Ave, Wicker Park", "lat": 41.9103, "lng": -87.6845, "color": "#0e7490", "maps_url": "https://maps.google.com/?q=2027+W+North+Ave+Chicago+IL"}];
+  var venues = [{"name": "Andy's Jazz Club", "initials": "A", "addr": "11 E. Hubbard St, River North", "lat": 41.8916, "lng": -87.628, "color": "#b45309", "maps_url": "https://maps.google.com/?q=11+E+Hubbard+St+Chicago+IL"}, {"name": "Green Mill", "initials": "GM", "addr": "4802 N Broadway, Uptown", "lat": 41.9659, "lng": -87.6579, "color": "#00a651", "maps_url": "https://maps.google.com/?q=4802+N+Broadway+Chicago+IL"}, {"name": "Jazz Showcase", "initials": "JS", "addr": "806 S. Plymouth Ct, South Loop", "lat": 41.8697, "lng": -87.6284, "color": "#8b1a1a", "maps_url": "https://maps.google.com/?q=806+S+Plymouth+Ct+Chicago+IL"}, {"name": "Winter's Jazz Club", "initials": "WJ", "addr": "465 N McClurg Ct, Streeterville", "lat": 41.8928, "lng": -87.6179, "color": "#c2410c", "maps_url": "https://maps.google.com/?q=465+N+McClurg+Ct+Chicago+IL"}, {"name": "Constellation", "initials": "Con", "addr": "3111 N Western Ave, Logan Square", "lat": 41.9343, "lng": -87.6892, "color": "#6d28d9", "maps_url": "https://maps.google.com/?q=3111+N+Western+Ave+Chicago+IL"}, {"name": "Elastic Arts", "initials": "EA", "addr": "2830 N Milwaukee Ave, Logan Square", "lat": 41.9309, "lng": -87.7002, "color": "#065f46", "maps_url": "https://maps.google.com/?q=2830+N+Milwaukee+Ave+Chicago+IL"}, {"name": "The Whistler", "initials": "W", "addr": "2421 N Milwaukee Ave, Logan Square", "lat": 41.9224, "lng": -87.6999, "color": "#be185d", "maps_url": "https://maps.google.com/?q=2421+N+Milwaukee+Ave+Chicago+IL"}, {"name": "Hungry Brain", "initials": "HB", "addr": "2319 W Belmont Ave, Chicago, IL 60618", "lat": 41.9212, "lng": -87.6997, "color": "#9f1239", "maps_url": "https://maps.google.com/?q=2319+W+Belmont+Ave+Chicago+IL"}, {"name": "Lemon", "initials": "Lem", "addr": "1600 W Grand Ave, West Town", "lat": 41.8909, "lng": -87.6694, "color": "#c8a200", "maps_url": "https://maps.google.com/?q=1600+W+Grand+Ave+Chicago+IL"}, {"name": "Le Piano", "initials": "LP", "addr": "6970 N Glenwood Ave, Rogers Park", "lat": 42.0079, "lng": -87.6604, "color": "#1e3a5f", "maps_url": "https://maps.google.com/?q=6970+N+Glenwood+Ave+Chicago+IL"}, {"name": "Fulton Street Collective", "initials": "FSC", "addr": "1821 W Hubbard St, #307, West Town", "lat": 41.89, "lng": -87.6748, "color": "#374151", "maps_url": "https://maps.google.com/?q=1821+W+Hubbard+St+Chicago+IL"}, {"name": "Clara Chicago", "initials": "Cla", "addr": "2027 W North Ave, Wicker Park", "lat": 41.9103, "lng": -87.6845, "color": "#0e7490", "maps_url": "https://maps.google.com/?q=2027+W+North+Ave+Chicago+IL"}];
   var map = L.map('venue-map', {scrollWheelZoom: false});
   L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
     attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors © <a href="https://carto.com/">CARTO</a>',
@@ -3589,6 +4150,16 @@
       metaEl.appendChild(btn);
     });
   });
+})();
+
+// Set sticky day-header offset to filter bar height
+(function() {
+  function setFilterBarH() {
+    var fb = document.getElementById('filter-bar');
+    if (fb) document.documentElement.style.setProperty('--filterbar-h', fb.offsetHeight + 'px');
+  }
+  setFilterBarH();
+  window.addEventListener('resize', setFilterBarH);
 })();
 </script>
 </body>
